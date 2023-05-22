@@ -1,0 +1,16 @@
+{
+  "name": "kubuce_temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./css/index.css -o ./css/app.css",
+    "watch": "tailwindcss -i ./css/index.css -o ./css/app.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}

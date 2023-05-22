@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <!-- Simple NavBar -->
+      <nav class="fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex items-center flex-wrap py-5 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Space -->
+      <div class="h-24"></div>
+
+      <section class="mx-10">
+        <div class="flex flex-col md:flex-row container mx-auto mt-10">
+          <!-- Sign Up Form  -->
+          <form action="" id="login_form" class="space-y-8 md:w-1/2">
+            <h1
+              class="text-4xl font-extrabold muli-bold mb-5 md:text-left text-kubuceDarkBlue"
+            >
+              Create Account
+            </h1>
+
+            <div class="form-control">
+              <label for="" class="form-label inline-block muli-semi-bold mb-3"
+                >Username</label
+              >
+              <input
+                type="name"
+                class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                required
+                autocomplete="true"
+                placeholder="name"
+              />
+            </div>
+
+            <div class="form-control">
+              <div class="flex justify-between items-center">
+                <label
+                  for=""
+                  class="form-label inline-block muli-semi-bold mb-3"
+                  >Email</label
+                >
+                <span
+                  onclick="openModal()"
+                  class="cursor-pointer text-kubuceInfoBlue text-sm font-semibold mb-3"
+                  >Use Kubuce Email</span
+                >
+              </div>
+              <input
+                type="email"
+                class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                required
+                autocomplete="true"
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="form-control">
+              <label for="" class="form-label inline-block muli-semi-bold mb-3"
+                >Password</label
+              >
+              <!--! Delete Pls Do the password hide and show , you can target the fa-eye-slash to fa-eye -->
+              <div class="inner relative">
+                <input
+                  type="password"
+                  class="border-1px font-semibold transition-all py-4 px-5 pr-12 rounded-md min-w-full"
+                  required
+                  placeholder="*******"
+                />
+                <div
+                  class="password_eye absolute top-1/3 right-4 text-right cursor-pointer"
+                >
+                  <span><i class="fa-solid fa-eye-slash"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <button
+                type="submit"
+                class="rounded-md px-20 py-4 shadow-lg font-bold text-white bg-kubuceDanger whitespace-nowrap min-w-full focus:outline-none focus:ring focus:ring-red-400"
+              >
+                Sign Up
+              </button>
+              <p class="mt-4">
+                Already Have An Account?
+                <a
+                  href="./login.html"
+                  class="text-kubuceInfoBlue font-semibold mb-0 hover:text-kubuceLight"
+                  >Login</a
+                >
+              </p>
+            </div>
+          </form>
+
+          <div class="hidden md:w-1/2 md:flex justify-center items-center">
+            <img src="./images/Sign up.png" alt="" class="signup-image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Simple Footer -->
+      <div class="py-3 px-5 mt-20 md:mt-0 sticky top-full">
+        <div class="container mx-auto flex justify-center items-center">
+          <ul class="flex space-x-10 px-5 font-semibold text-sm">
+            <!-- Users Will Just download the pdf -->
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Privacy Policy</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">User Agreement</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Terms And Condition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kubuce Emails to use -->
+      <div class="modal-container" id="kubuce_emails">
+        <div class="modal-content">
+          <button id="close-modal" onclick="closeModal()">
+            <span><i class="fa-solid fa-xmark"></i></span>
+          </button>
+          <h2 class="font-bold text-2xl">Suggested Emails</h2>
+          <div class="mt-10 overflow-y-auto max-h-80 overflow-container">
+            <ul class="space-y-3">
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+              <li>kubucemmaniel@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

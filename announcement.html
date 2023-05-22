@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <div id="full-backdrop"></div>
+      <!-- NavBar -->
+      <nav class="shadow-lg fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex justify-between items-center py-4 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+          <!-- Nav Items -->
+          <ul
+            class="hidden md:flex items-center font-semibold text-ellipsis space-x-12 md:mr-0 lg:mr-60"
+          >
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Features </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="#services"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#features"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Testimonials</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#getKubuce"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="./about.html" class="active">About Us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Help </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg shadow-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="./faqs.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./contact.html"
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./announcement.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue active"
+                      >Announcements</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- Authentication -->
+          <div class="nav-auth hidden md:flex space-x-10 items-center">
+            <a href="./login.html" class="font-bold hover:text-gray-600"
+              >Login</a
+            >
+            <a
+              href="./signUp.html"
+              class="rounded-full px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap hover:bg-kubuceDarkBlue transition-all"
+              >Sign Up</a
+            >
+          </div>
+          <!-- Hamburgur Icon-->
+          <button
+            id="open-menu-btn"
+            class="flex hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Kubuce Mobile view -->
+      <div
+        class="kubuce-mobile fixed z-50 bg-white text-black"
+        id="mobile-menu"
+      >
+        <!-- Mobile Header -->
+        <div class="md:px-20 mt-5 mb-20 mobile-header">
+          <!-- Hamburgur Icon-->
+          <div class="hamburger-wrap w-full flex justify-end">
+            <button
+              id="close-menu-btn"
+              class="flex hamburger md:hidden focus:outline-none open"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Logo -->
+          <div class="kubuce-mobile-logo flex justify-center items-center mt-5">
+            <a href="index.html">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="kubuce-mobile-nav mx-10">
+          <ul class="space-y-8 font-bold">
+            <li>
+              <a href="./about.html" class="hover:text-kubuceInfoBlue">About</a>
+            </li>
+            <li>
+              <a href="./pricing.html" class="hover:text-kubuceInfoBlue"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="./faqs.html" class="hover:text-kubuceInfoBlue">FAQs</a>
+            </li>
+            <li>
+              <a href="./contact.html" class="hover:text-kubuceInfoBlue"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./announcement.html"
+                class="hover:text-kubuceInfoBlue active"
+                >Announcements</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Authentication -->
+        <div
+          class="nav-auth flex space-x-5 justify-center items-center mx-5 mt-20"
+        >
+          <a
+            href="./login.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Login</a
+          >
+          <a
+            href="./signUp.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+      <!-- Space -->
+      <div class="h-24"></div>
+
+      <!-- Hero -->
+      <section id="hero">
+        <div
+          class="flex flex-col-reverse mt-10 md:mt-0 md:flex-row items-center px-6 space-y-0 md:space-y-0 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="flex flex-col items-center md:items-start mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-4xl md:text-6xl lg:text-7xl font-extrabold text-center md:text-left text-kubuceDarkBlue"
+            >
+              Be Up To Date With KUBUCE
+            </h1>
+            <div class="download-btns md:hidden text-center flex gap-6">
+              <div class="google-play">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/google-play.svg" alt=""
+                /></a>
+              </div>
+              <div class="app-store">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/app-store.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <!-- Image right Item-->
+          <div
+            class="md:w-1/2 hidden md:block hero-right"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <img
+              src="./images/Announcement page graphic.png"
+              alt=""
+              class="w-30"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Kubuce Announcement -->
+
+      <section id="blog">
+        <div
+          class="md:mx-10 mx-5 lg:mx-20 flex justify-between mt-20 md:mt-40 mb-20 md:mb-40 flex-wrap"
+        >
+          <div class="blogs md:w-1/2 space-y-10">
+            <h1 class="text-4xl font-bold px-10 text-kubuceDarkBlue">
+              Announcements
+            </h1>
+            <div>
+              <div class="blog border-top-light flex flex-col items-start py-4">
+                <div
+                  class="rounded-full py-2 px-5 text-black font-light text-sm"
+                >
+                  Feb 28
+                </div>
+                <div class="content px-5">
+                  <div class="title text-2xl">
+                    <h3 class="text-black font-bold">
+                      What Made Kubuce Shutdown?
+                    </h3>
+                  </div>
+                  <div class="body py-3">
+                    <p class="text-justify cutoff_text">
+                      lorem Lorem ipsum dolor sit, amet consectetur adipisicing
+                      elit. Iusto, consectetur a nemo, praesentium vitae ex
+                      itaque.... Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Consequuntur temporibus hic tempora.
+                      Maiores, nesciunt dolores. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Dolores, ipsum perspiciatis
+                      deserunt quaerat quis eligendi. Lorem ipsum, dolor sit
+                      amet consectetur adipisicing elit. Fuga pariatur nulla
+                      sapiente impedit iste maiores eligendi facilis? Pariatur
+                      quae, dolore laboriosam cumque in, ullam molestias, quas
+                      maiores asperiores quam quibusdam eveniet consequuntur
+                      tempore sequi officia! Impedit nisi fugiat odio animi
+                      repellendus, eveniet porro commodi iure asperiores unde
+                      nam. Illum, tenetur? Oladele
+                    </p>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="check"
+                      class="expand_message_btn"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="rounded-full bg-kubuceLight mx-5 py-2 px-5 text-black font-bold text-sm mt-5"
+                >
+                  Kubuce
+                </div>
+              </div>
+              <div class="blog border-top-light flex flex-col items-start py-4">
+                <div
+                  class="rounded-full py-2 px-5 text-black font-light text-sm"
+                >
+                  Feb 28
+                </div>
+                <div class="content px-5">
+                  <div class="title text-2xl">
+                    <h3 class="text-black font-bold">
+                      What Made Kubuce Shutdown?
+                    </h3>
+                  </div>
+                  <div class="body py-3">
+                    <p class="text-justify cutoff_text">
+                      lorem Lorem ipsum dolor sit, amet consectetur adipisicing
+                      elit. Iusto, consectetur a nemo, praesentium vitae ex
+                      itaque.... Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Consequuntur temporibus hic tempora.
+                      Maiores, nesciunt dolores. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Dolores, ipsum perspiciatis
+                      deserunt quaerat quis eligendi. Lorem ipsum, dolor sit
+                      amet consectetur adipisicing elit. Fuga pariatur nulla
+                      sapiente impedit iste maiores eligendi facilis? Pariatur
+                      quae, dolore laboriosam cumque in, ullam molestias, quas
+                      maiores asperiores quam quibusdam eveniet consequuntur
+                      tempore sequi officia! Impedit nisi fugiat odio animi
+                      repellendus, eveniet porro commodi iure asperiores unde
+                      nam. Illum, tenetur? Oladele
+                    </p>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="check"
+                      class="expand_message_btn"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="rounded-full bg-kubuceLight mx-5 py-2 px-5 text-black font-bold text-sm mt-5"
+                >
+                  Kubuce
+                </div>
+              </div>
+              <div class="blog border-top-light flex flex-col items-start py-4">
+                <div
+                  class="rounded-full py-2 px-5 text-black font-light text-sm"
+                >
+                  Feb 28
+                </div>
+                <div class="content px-5">
+                  <div class="title text-2xl">
+                    <h3 class="text-black font-bold">
+                      What Made Kubuce Shutdown?
+                    </h3>
+                  </div>
+                  <div class="body py-3">
+                    <p class="text-justify cutoff_text">
+                      lorem Lorem ipsum dolor sit, amet consectetur adipisicing
+                      elit. Iusto, consectetur a nemo, praesentium vitae ex
+                      itaque.... Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Consequuntur temporibus hic tempora.
+                      Maiores, nesciunt dolores. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Dolores, ipsum perspiciatis
+                      deserunt quaerat quis eligendi. Lorem ipsum, dolor sit
+                      amet consectetur adipisicing elit. Fuga pariatur nulla
+                      sapiente impedit iste maiores eligendi facilis? Pariatur
+                      quae, dolore laboriosam cumque in, ullam molestias, quas
+                      maiores asperiores quam quibusdam eveniet consequuntur
+                      tempore sequi officia! Impedit nisi fugiat odio animi
+                      repellendus, eveniet porro commodi iure asperiores unde
+                      nam. Illum, tenetur? Oladele
+                    </p>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="check"
+                      class="expand_message_btn"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="rounded-full bg-kubuceLight mx-5 py-2 px-5 text-black font-bold text-sm mt-5"
+                >
+                  Kubuce
+                </div>
+              </div>
+              <div class="blog border-top-light flex flex-col items-start py-4">
+                <div
+                  class="rounded-full py-2 px-5 text-black font-light text-sm"
+                >
+                  Feb 28
+                </div>
+                <div class="content px-5">
+                  <div class="title text-2xl">
+                    <h3 class="text-black font-bold">
+                      What Made Kubuce Shutdown?
+                    </h3>
+                  </div>
+                  <div class="body py-3">
+                    <p class="text-justify cutoff_text">
+                      lorem Lorem ipsum dolor sit, amet consectetur adipisicing
+                      elit. Iusto, consectetur a nemo, praesentium vitae ex
+                      itaque.... Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Consequuntur temporibus hic tempora.
+                      Maiores, nesciunt dolores. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Dolores, ipsum perspiciatis
+                      deserunt quaerat quis eligendi. Lorem ipsum, dolor sit
+                      amet consectetur adipisicing elit. Fuga pariatur nulla
+                      sapiente impedit iste maiores eligendi facilis? Pariatur
+                      quae, dolore laboriosam cumque in, ullam molestias, quas
+                      maiores asperiores quam quibusdam eveniet consequuntur
+                      tempore sequi officia! Impedit nisi fugiat odio animi
+                      repellendus, eveniet porro commodi iure asperiores unde
+                      nam. Illum, tenetur? Oladele
+                    </p>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="check"
+                      class="expand_message_btn"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="rounded-full bg-kubuceLight mx-5 py-2 px-5 text-black font-bold text-sm mt-5"
+                >
+                  Kubuce
+                </div>
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div
+              class="faq-pagination text-center space-x-2 space-y-5 md:space-y-0 mt-10 mb-20"
+            >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold"
+                >PREV</a
+              >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold hover:bg-kubuceDarkBlue active:bg-kubuceDarkBlue hover:text-white"
+                >1</a
+              >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold hover:bg-kubuceDarkBlue active:bg-kubuceDarkBlue hover:text-white"
+                >2</a
+              >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold hover:bg-kubuceDarkBlue active:bg-kubuceDarkBlue hover:text-white"
+                >3</a
+              >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold hover:bg-kubuceDarkBlue active:bg-kubuceDarkBlue hover:text-white"
+                >4</a
+              >
+              <a
+                href=""
+                class="bg-kubuceBgLight text-gray-500 rounded-lg px-3 py-2 font-semibold"
+                >NEXT</a
+              >
+            </div>
+          </div>
+          <aside class="md:w-1/4 hidden md:block">
+            <h1 class="text-4xl font-bold text-kubuceDarkBlue underline">
+              Quick Links
+            </h1>
+            <ul class="space-y-5 px-5 mt-10">
+              <li class="list-disc">
+                <a
+                  href="#"
+                  class="font-semibold hover:text-kubuceInfoBlue text-lg"
+                  >Home</a
+                >
+              </li>
+              <li class="list-disc">
+                <a
+                  href="#"
+                  class="font-semibold hover:text-kubuceInfoBlue text-lg"
+                  >About</a
+                >
+              </li>
+              <li class="list-disc">
+                <a
+                  href="#"
+                  class="font-semibold hover:text-kubuceInfoBlue text-lg"
+                  >Feature</a
+                >
+              </li>
+              <li class="list-disc">
+                <a
+                  href="#"
+                  class="font-semibold hover:text-kubuceInfoBlue text-lg"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="list-disc">
+                <a
+                  href="#"
+                  class="font-semibold hover:text-kubuceInfoBlue text-lg"
+                  >Faqs</a
+                >
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="fe-footer">
+        <a href="#" class="backtotop"><i class="fa-solid fa-arrow-up"></i></a>
+        <div class="child">
+          <div class="logo">
+            <img src="./images/kubuce logo dark.png" alt="" />
+          </div>
+          <span>
+            The Kubuce cooperative society management web application as you may
+            already know is a cooperative web application use to manage both
+            members, records and accounts of cooperative societies
+          </span>
+          <div class="social">
+            <a href="">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <div
+            class="download-btns text-center mx-10 flex gap-6"
+            id="getKubuce"
+          >
+            <div class="google-play">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/google-play.svg" alt=""
+              /></a>
+            </div>
+            <div class="app-store">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/app-store.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">Company</h3>
+          <div class="nav">
+            <a href="">About Us</a>
+            <a href="">FAQ</a>
+            <a href="">Pricing</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Resources
+          </h3>
+          <div class="nav">
+            <a href="">Privacy Policy</a>
+            <a href="">Referral Program</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Contact Us
+          </h3>
+          <div class="nav">
+            <span
+              >Shop 401, Iseken, Plaza Enerthen junction, Sapale Road, Effueun
+              Delta State</span
+            >
+            <span>
+              <span>+(234) 705-902-6964</span>
+              <span>+(234) 701-081-7588</span>
+            </span>
+            <span>contact@kubuce.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

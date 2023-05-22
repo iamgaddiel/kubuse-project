@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <div id="full-backdrop"></div>
+      <!-- NavBar -->
+      <nav class="shadow-lg fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex justify-between items-center py-4 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+          <!-- Nav Items -->
+          <ul
+            class="header-nav hidden md:flex items-center font-semibold text-ellipsis space-x-12 md:mr-0 lg:mr-60"
+          >
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Features </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="#services"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#features"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Testimonials</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#getKubuce"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./pricing.html" class="active">Pricing</a></li>
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Help </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg shadow-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="./faqs.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./contact.html"
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./announcement.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >Announcements</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- Authentication -->
+          <div class="nav-auth hidden md:flex space-x-10 items-center">
+            <a href="./login.html" class="font-bold hover:text-gray-600"
+              >Login</a
+            >
+            <a
+              href="./signUp.html"
+              class="rounded-full px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap hover:bg-kubuceDarkBlue transition-all"
+              >Sign Up</a
+            >
+          </div>
+          <!-- Hamburgur Icon-->
+          <button
+            id="open-menu-btn"
+            class="flex hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Kubuce Mobile view -->
+      <div
+        class="kubuce-mobile fixed z-50 bg-white text-black"
+        id="mobile-menu"
+      >
+        <!-- Mobile Header -->
+        <div class="md:px-20 mt-5 mb-20 mobile-header">
+          <!-- Hamburgur Icon-->
+          <div class="hamburger-wrap w-full flex justify-end">
+            <button
+              id="close-menu-btn"
+              class="flex hamburger md:hidden focus:outline-none open"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Logo -->
+          <div class="kubuce-mobile-logo flex justify-center items-center mt-5">
+            <a href="index.html">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="kubuce-mobile-nav mx-10">
+          <ul class="space-y-8 font-bold">
+            <li>
+              <a href="./about.html" class="hover:text-kubuceInfoBlue">About</a>
+            </li>
+            <li>
+              <a href="./pricing.html" class="hover:text-kubuceInfoBlue active"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="./faqs.html" class="hover:text-kubuceInfoBlue">FAQs</a>
+            </li>
+            <li>
+              <a href="./contact.html" class="hover:text-kubuceInfoBlue"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="./announcement.html" class="hover:text-kubuceInfoBlue"
+                >Announcements</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Authentication -->
+        <div
+          class="nav-auth flex space-x-5 justify-center items-center mx-5 mt-20"
+        >
+          <a
+            href="./login.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Login</a
+          >
+          <a
+            href="./signUp.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+      <!-- Space -->
+      <div class="h-20"></div>
+
+      <!-- Hero -->
+      <section id="pricing-hero" class="bg-kubuceDarkBlue">
+        <div
+          class="flex flex-col justify-center items-center px-6 py-20 space-y-0 mx-5 md:mx-10 lg:mx-20"
+        >
+          <div class="md:w-1/2 space-y-5 md:space-y-10 lg:space-y-16">
+            <h2
+              class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white text-center muli-bold"
+            >
+              GET STARTED NOW, PICK A PLAN LATER
+            </h2>
+            <p class="text-center text-white muli-semi-bold">
+              Try Basic Plan Free for 7 days to get unrestricted access
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans">
+        <div class="mt-20">
+          <div
+            class="plans flex flex-col md:flex-row lg:justify-center justify-between md:space-x-5 space-y-5 md:space-y-0 mt-20 mx-5 md:mx-10 lg:mx-40"
+          >
+            <div
+              class="plan px-10 py-10 border-1px rounded-lg md:w-1/3 lg:w-1/3 xl:w-1/3"
+            >
+              <div class="flex flex-col gap-8 items-start">
+                <h2 class="muli-bold text-3xl text-kubuceDarkBlue">Lite</h2>
+                <h1 class="muli-bold text-4xl text-kubuceDarkBlue">$19</h1>
+                <p class="muli-semi-bold text-gray-600">
+                  Hit the ground running
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <button
+                    class="border border-solid border-kubuceDarkBlue rounded-full px-16 muli-semi-bold py-3 transition-all text-kubuceDarkBlue hover:bg-kubuceDarkBlue hover:text-white"
+                  >
+                    Get Started
+                  </button>
+                </div>
+                <ul class="space-y-5">
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="plan px-10 py-10 shadow-2xl border-1px rounded-lg w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3"
+            >
+              <div class="flex flex-col gap-8 items-start">
+                <h2 class="muli-bold text-3xl text-kubuceDarkBlue">Lite</h2>
+                <h1 class="muli-bold text-4xl text-kubuceDarkBlue">$19</h1>
+                <p class="muli-semi-bold text-gray-600">
+                  Hit the ground running
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <button
+                    class="border border-solid border-kubuceDarkBlue rounded-full px-16 muli-semi-bold py-3 transition-all text-kubuceDarkBlue hover:bg-kubuceDarkBlue hover:text-white"
+                  >
+                    Get Started
+                  </button>
+                </div>
+                <ul class="space-y-5">
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="plan px-10 py-10 border-1px rounded-lg w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3"
+            >
+              <div class="flex flex-col gap-8 items-start">
+                <h2 class="muli-bold text-3xl text-kubuceDarkBlue">Lite</h2>
+                <h1 class="muli-bold text-4xl text-kubuceDarkBlue">$19</h1>
+                <p class="muli-semi-bold text-gray-600">
+                  Hit the ground running
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <button
+                    class="border border-solid border-kubuceDarkBlue rounded-full px-16 muli-semi-bold py-3 transition-all text-kubuceDarkBlue hover:bg-kubuceDarkBlue hover:text-white"
+                  >
+                    Get Started
+                  </button>
+                </div>
+                <ul class="space-y-5">
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                  <li class="flex items-center gap-6">
+                    <span
+                      class="bg-kubuceBgLight text-kubuceDarkBlue dot-small flex items-center justify-center font-extrabold text-sm"
+                      ><i class="fa-solid fa-check"></i
+                    ></span>
+                    <p class="muli-bold text-1xl text-kubuceDarkBlue">
+                      Nothing Yet
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials">
+        <!-- Container to heading and text blocks -->
+        <div class="lg:mx-20 px-5 mx-auto mt-32 text-center">
+          <!-- Heading -->
+          <h2
+            class="text-4xl font-bold mb-5 text-center text-kubuceDarkBlue muli-bold"
+          >
+            Don't Just Take Our Word For It!
+          </h2>
+
+          <div class="splide mt-3">
+            <div class="splide__track">
+              <!-- Testimonials Container -->
+              <div class="flex mt-24 md:flex-row splide__list">
+                <!-- Testimonial 1 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="fe-footer">
+        <a href="#" class="backtotop"><i class="fa-solid fa-arrow-up"></i></a>
+        <div class="child">
+          <div class="logo">
+            <img src="./images/kubuce logo dark.png" alt="" />
+          </div>
+          <span>
+            The Kubuce cooperative society management web application as you may
+            already know is a cooperative web application use to manage both
+            members, records and accounts of cooperative societies
+          </span>
+          <div class="social">
+            <a href="">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <div
+            class="download-btns text-center mx-10 flex gap-6"
+            id="getKubuce"
+          >
+            <div class="google-play">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/google-play.svg" alt=""
+              /></a>
+            </div>
+            <div class="app-store">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/app-store.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">Company</h3>
+          <div class="nav">
+            <a href="">About Us</a>
+            <a href="">FAQ</a>
+            <a href="">Pricing</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Resources
+          </h3>
+          <div class="nav">
+            <a href="">Privacy Policy</a>
+            <a href="">Referral Program</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Contact Us
+          </h3>
+          <div class="nav">
+            <span
+              >Shop 401, Iseken, Plaza Enerthen junction, Sapale Road, Effueun
+              Delta State</span
+            >
+            <span>
+              <span>+(234) 705-902-6964</span>
+              <span>+(234) 701-081-7588</span>
+            </span>
+            <span>contact@kubuce.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

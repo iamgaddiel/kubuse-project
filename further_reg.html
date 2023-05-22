@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <!-- Simple NavBar -->
+      <nav class="fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex items-center flex-wrap py-5 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Space -->
+      <div class="h-24"></div>
+
+      <section class="mx-10">
+        <div
+          class="flex flex-col md:flex-row container justify-between space-x-10 w-full h-full gap-6 items-center mx-auto mt-10"
+        >
+          <!-- Cooperative Registration -->
+          <form action="" class="w-full space-y-10">
+            <h1
+              class="text-3xl md:text-4xl lg:text-5xl mb-10 font-bold muli-bold text-kubuceDarkBlue text-center"
+            >
+              Enter Your Personal Details To Proceed
+            </h1>
+            <p
+              class="text-kubuceInfoBlue font-semibold flex justify-start items-center text-base mb-0 mt-2 hover:text-kubuceLight cursor-pointer"
+            >
+              <a href="" class="back"
+                ><span><i class="fa-solid fa-arrow-left-long"></i></span>
+                Back</a
+              >
+            </p>
+
+            <div
+              class="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-8"
+            >
+              <div class="form-control md:w-1/2">
+                <label
+                  for=""
+                  class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                  required
+                  autocomplete="true"
+                  placeholder="Enter Full Name"
+                />
+              </div>
+              <div class="form-control md:w-1/2">
+                <label
+                  for=""
+                  class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                  required
+                  autocomplete="true"
+                  placeholder="example@domain.com"
+                />
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-8"
+            >
+              <div class="form-control md:w-1/2">
+                <label
+                  for=""
+                  class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="number"
+                  class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                  required
+                  autocomplete="true"
+                  placeholder="Enter Your Number"
+                />
+              </div>
+              <div class="form-control md:w-1/2">
+                <label
+                  for=""
+                  class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                >
+                  Your Cooperative
+                </label>
+                <select
+                  name=""
+                  id=""
+                  class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                >
+                  <option value="" disabled>Choose...</option>
+                  <option value="">Kubuce</option>
+                  <option value="">Kubuc</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-control">
+              <label
+                for=""
+                class="form-label inline-block muli-semi-bold mb-3 text-lg"
+              >
+                Address
+              </label>
+              <textarea
+                placeholder="Your Address"
+                class="border-1px font-semibold transition-all py-3 px-5 rounded-lg min-w-full h-64"
+              ></textarea>
+            </div>
+
+            <div class="form-control">
+              <button
+                type="submit"
+                class="rounded-md px-20 py-4 shadow-lg font-bold text-white bg-kubuceDanger whitespace-nowrap min-w-full focus:outline-none focus:ring focus:ring-red-400"
+              >
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Simple Footer -->
+      <div class="py-3 px-5 mt-20 sticky top-full">
+        <div class="container mx-auto flex justify-center items-center">
+          <ul class="flex space-x-10 px-5 font-semibold text-sm">
+            <!-- Users Will Just download the pdf -->
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Privacy Policy</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">User Agreement</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Terms And Condition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

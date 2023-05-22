@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <section>
+        <div
+          class="flex flex-col-reverse md:flex-row h-screen justify-center items-center px-6 space-y-0 md:space-y-0 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div class="flex flex-col items-center mt-10 space-y-12 md:w-1/2">
+            <h1
+              class="text-5xl md:text-7xl lg:text-9xl font-extrabold muli-bold text-center md:text-left custom-text-gradient"
+            >
+              Oops!
+            </h1>
+            <h3
+              class="text-3xl font-extrabold text-center md:text-left text-kubuceDarkBlue"
+            >
+              500 - INTERNAL SERVER ERROR
+            </h3>
+
+            <p class="text-center max-w-md font-semibold">
+              The server encountered an internal error or misconfiguration and
+              was unable to run your request successfully, Sorry for the
+              inconvenience
+            </p>
+            <div class="flex justify-center md:justify-start">
+              <a
+                href="./index.html"
+                class="p-3 px-6 pt-2 text-white bg-kubuceDarkBlue hover:bg-kubuceInfoBlue rounded-md baseline hover:-translate-y-2 transition-transform"
+                >Back to Homepage</a
+              >
+            </div>
+          </div>
+          <!-- Image right Item-->
+          <div class="hidden md:block md:w-1/2 hero-right">
+            <a href="./index.html"
+              ><img src="./images/Error500 Graphic.png" alt="" class="w-30"
+            /></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

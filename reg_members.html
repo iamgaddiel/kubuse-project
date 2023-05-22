@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <!-- Simple NavBar -->
+      <nav class="fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex items-center flex-wrap py-5 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Space -->
+      <div class="h-24"></div>
+
+      <section class="mx-10 mb-20">
+        <div class="container mx-auto">
+          <!-- Last Step -->
+          <div
+            class="flex justify-between items-center flex-wrap gap-6 mt-10 mb-10"
+          >
+            <div class="space-y-5">
+              <h1
+                class="text-3xl md:text-5xl lg:text-7xl text-kubuceDarkBlue font-bold muli-bold"
+              >
+                Last Step
+              </h1>
+              <p class="font-bold text-lg">
+                Add minimum of 10 members of your Cooperative to proceed to
+                dashboard
+              </p>
+            </div>
+            <h2
+              class="text-kubuceInfoBlue underline uppercase text-2xl font-bold"
+            >
+              3 OF members added
+            </h2>
+          </div>
+
+          <!-- Upload the excel file -->
+          <div
+            class="flex justify-between flex-wrap gap-6 items-center border border-solid border-t-kubuceLight border-b-kubuceLight border-x-0 py-10 mb-10 relative"
+          >
+            <h1 class="font-bold text-lg">
+              Easily Upload your member's details using supported file format
+            </h1>
+            <div class="flex flex-col items-center space-y-1">
+              <a href="" download="" class="text-sm text-kubuceInfoBlue"
+                >Download sample file</a
+              >
+              <label
+                for="upload-file"
+                class="bg-kubuceInfoBlue px-5 py-3 rounded-md text-white text-sm cursor-pointer hover:bg-kubuceDarkBlue"
+                >UPLOAD FILE
+                <span class="ml-3"><i class="fas fa-upload"></i></span
+              ></label>
+              <input type="file" name="" id="upload-file" class="hidden" />
+            </div>
+
+            <!--  -->
+            <div class="or">Or</div>
+          </div>
+
+          <h1 class="text-3xl text-kubuceDarkBlue font-bold mb-10">
+            Upload Manually
+          </h1>
+
+          <form action="">
+            <div
+              class="flex flex-col md:flex-row justify-center lg:justify-between space-x-0 md:space-x-10 w-full h-full gap-0 md:gap-20 items-start"
+            >
+              <!-- Members Details -->
+              <div class="form-1 space-y-10 w-full md:w-1/2">
+                <h1 class="underline font-bold text-lg">Members details</h1>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Full Name(Start with First name)
+                  </label>
+                  <input
+                    type="text"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="Enter Full Name"
+                  />
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="example@domain.com"
+                  />
+                </div>
+                <div
+                  class="flex flex-col md:flex-row md:space-x-4 lg:space-x-4 space-y-10 md:space-y-0"
+                >
+                  <div class="form-control md:w-1/2">
+                    <label
+                      for=""
+                      class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                    >
+                      State
+                    </label>
+                    <select
+                      name=""
+                      id=""
+                      class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    >
+                      <option value="" disabled>Choose...</option>
+                      <option value="">Nasarawa</option>
+                      <option value="">Nasarwa</option>
+                    </select>
+                  </div>
+                  <div class="form-control md:w-1/2">
+                    <label
+                      for=""
+                      class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                    >
+                      L.G.A
+                    </label>
+                    <select
+                      name=""
+                      id=""
+                      class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    >
+                      <option value="" disabled>Choose...</option>
+                      <option value="">Akwanga</option>
+                      <option value="">Akwanga</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="number"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="+234 1234556789"
+                  />
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Address
+                  </label>
+                  <textarea
+                    placeholder="Your Address"
+                    class="border-1px font-semibold transition-all py-3 px-5 rounded-lg min-w-full h-64"
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Next Of Kin Details -->
+              <div class="form-2 space-y-10 w-full md:w-1/2">
+                <h1 class="underline font-bold text-lg">
+                  Next of kin details (Optional)
+                </h1>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Full Name(Start with First name)
+                  </label>
+                  <input
+                    type="text"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="Enter Full Name"
+                  />
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Nest Of Kin Relationship
+                  </label>
+                  <input
+                    type="text"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="Aunty"
+                  />
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="email"
+                    class="border-1px font-semibold transition-all py-4 px-5 rounded-md min-w-full"
+                    required
+                    autocomplete="true"
+                    placeholder="+234 1234556789"
+                  />
+                </div>
+                <div class="form-control">
+                  <label
+                    for=""
+                    class="form-label inline-block muli-semi-bold mb-3 text-lg"
+                  >
+                    Address
+                  </label>
+                  <textarea
+                    placeholder="Your Address"
+                    class="border-1px font-semibold transition-all py-3 px-5 rounded-lg min-w-full h-64"
+                  ></textarea>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0"
+                >
+                  <div class="form-control w-full">
+                    <button
+                      type="submit"
+                      class="rounded-lg px-16 py-3 uppercase w-full font-bold text-kubuceDanger bg-transparent border border-solid border-kubuceDanger hover:bg-kubuceDanger hover:text-white"
+                    >
+                      Add new
+                    </button>
+                  </div>
+                  <div class="form-control w-full">
+                    <button
+                      type="submit"
+                      class="rounded-lg px-16 py-3 uppercase w-full font-bold text-kubuceDarkBlue bg-transparent border border-solid border-kubuceDarkBlue hover:bg-kubuceDarkBlue hover:text-white"
+                    >
+                      Save for later
+                    </button>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <button
+                    type="submit"
+                    class="rounded-md px-20 py-4 font-bold min-w-full text-white bg-kubuceDanger whitespace-nowrap focus:outline-none focus:ring focus:ring-red-400"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Simple Footer -->
+      <div class="py-3 px-5 sticky top-full">
+        <div class="container mx-auto flex justify-center items-center">
+          <ul class="flex space-x-10 px-5 font-semibold text-sm">
+            <!-- Users Will Just download the pdf -->
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Privacy Policy</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">User Agreement</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Terms And Condition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

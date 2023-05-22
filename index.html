@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <div class="loader"></div>
+      <div id="full-backdrop"></div>
+      <!-- NavBar -->
+      <nav class="shadow-lg fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex justify-between items-center py-4 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+          <!-- Nav Items -->
+          <ul
+            class="header-nav hidden md:flex items-center font-semibold text-ellipsis space-x-12 md:mr-0 lg:mr-60"
+          >
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Features </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="#services"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#features"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Testimonials</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#getKubuce"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Help </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg shadow-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="./faqs.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./contact.html"
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./announcement.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >Announcements</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- Authentication -->
+          <div class="nav-auth hidden md:flex space-x-10 items-center">
+            <a href="./login.html" class="font-bold hover:text-gray-600"
+              >Login</a
+            >
+            <a
+              href="./signUp.html"
+              class="rounded-full px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap hover:bg-kubuceDarkBlue transition-all"
+              >Sign Up</a
+            >
+          </div>
+          <!-- Hamburgur Icon-->
+          <button
+            id="open-menu-btn"
+            class="flex hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Kubuce Mobile view -->
+      <div
+        class="kubuce-mobile fixed z-50 bg-white text-black"
+        id="mobile-menu"
+      >
+        <!-- Mobile Header -->
+        <div class="md:px-20 mt-5 mb-20 mobile-header">
+          <!-- Hamburgur Icon-->
+          <div class="hamburger-wrap w-full flex justify-end">
+            <button
+              id="close-menu-btn"
+              class="flex hamburger md:hidden focus:outline-none open"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Logo -->
+          <div class="kubuce-mobile-logo flex justify-center items-center mt-5">
+            <a href="index.html">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="kubuce-mobile-nav mx-10">
+          <ul class="space-y-8 font-bold">
+            <li>
+              <a href="./about.html" class="hover:text-kubuceInfoBlue">About</a>
+            </li>
+            <li>
+              <a href="./pricing.html" class="hover:text-kubuceInfoBlue"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="./faqs.html" class="hover:text-kubuceInfoBlue">FAQs</a>
+            </li>
+            <li>
+              <a href="./contact.html" class="hover:text-kubuceInfoBlue"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="./announcement.html" class="hover:text-kubuceInfoBlue"
+                >Announcements</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Authentication -->
+        <div
+          class="nav-auth flex space-x-5 justify-center items-center mx-5 mt-20 whitespace-nowrap"
+        >
+          <a
+            href="./login.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Login</a
+          >
+          <a
+            href="./signUp.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+
+      <!-- Space -->
+      <div class="h-24"></div>
+      <!-- Hero -->
+      <section id="hero">
+        <div
+          class="flex flex-col-reverse md:flex-row items-center px-6 space-y-0 md:space-y-0 mt-3 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="flex flex-col items-center md:items-start xl:items-center mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-4xl md:text-6xl lg:text-7xl font-extrabold text-center md:text-left text-kubuceDarkBlue"
+            >
+              Cooperative Management Made Easy
+            </h1>
+            <p class="max-w-sm text-center md:text-left">
+              A User friendly cooperative management software that enables a
+              seamless membership enrollment, contribution, management, loan
+              application, payment alert & e-statement for both members and
+              management committee(s)
+            </p>
+            <div class="flex justify-center md:justify-start">
+              <a
+                href="./links.html" target="_blank"
+                class="p-3 px-6 pt-2 text-white bg-kubuceDarkBlue hover:bg-kubuceInfoBlue rounded-full baseline hover:-translate-y-2 transition-transform"
+                >Get Started</a
+              >
+            </div>
+            <div class="download-btns md:hidden text-center flex gap-6">
+              <div class="google-play">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/google-play.svg" alt=""
+                /></a>
+              </div>
+              <div class="app-store">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/app-store.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <!-- Image right Item-->
+          <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+            <img src="./images/illustration-intro.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex flex-col md:flex-row items-center px-6 space-y-0 md:space-y-0 mt-3 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-2xl md:text-3xl font-extrabold text-center text-kubuceDarkBlue"
+            >
+              Friendly Design
+            </h1>
+            <p class="max-w-md text-center font-semibold">
+              Kubuce Web Application is designed in an aesthetic manner and
+              friendly in function for seamless experience
+            </p>
+          </div>
+          <!-- Image right Item-->
+          <div class="md:w-1/2" data-aos="fade-up" data-aos-duration="1000">
+            <img src="./images/Design.png" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center px-6 space-y-0 md:space-y-0 mt-3 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-2xl md:text-3xl font-extrabold text-center text-kubuceDarkBlue"
+            >
+              Strong Security
+            </h1>
+            <p class="max-w-md text-center font-semibold">
+              Different from others, we provide accessibility without
+              compromising private data of users to unauthorized body
+            </p>
+          </div>
+          <!-- Image right Item-->
+          <div class="md:w-1/2" data-aos="fade-up" data-aos-duration="1000">
+            <img src="./images/Cyber security.png" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center px-6 space-y-0 md:space-y-0 mt-3 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-2xl md:text-3xl font-extrabold text-center text-kubuceDarkBlue"
+            >
+              Data Analysis
+            </h1>
+            <p class="max-w-md text-center font-semibold">
+              You don't have to worry about analysis of your data, we have just
+              what you need right in place to aid you to do the analysis
+            </p>
+          </div>
+          <!-- Image right Item-->
+          <div class="md:w-1/2" data-aos="fade-up" data-aos-duration="1000">
+            <img src="./images/Data analysis.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- services -->
+      <section id="services">
+        <h1
+          class="text-3xl md:text-5xl text-center px-6 mx-5 md:mx-10 lg:mx-20 mt-20 text-kubuceDarkBlue font-bold text-ellipsis"
+        >
+          Services
+        </h1>
+        <div
+          class="flex flex-col md:flex-row justify-between gap-6 px-6 mt-10 mx-5 md:mx-10 lg:mx-20"
+        >
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center p-6 py-10 space-y-6 rounded-lg md:w-1/3"
+          >
+            <img
+              src="./images/Image1 on landing page.png"
+              alt=""
+              class="w-40"
+            />
+            <h1 class="text-2xl font-bold whitespace-nowrap">
+              Advanced calculations
+            </h1>
+            <p class="text-1xl text-center">
+              Automated calculation at your finger tip
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center p-6 py-10 space-y-6 rounded-lg md:w-1/3"
+          >
+            <img
+              src="./images/Image2 on landing page.png"
+              alt=""
+              class="w-40"
+            />
+            <h1 class="text-2xl font-bold">Powerful Admin</h1>
+            <p class="text-1xl text-center">
+              Manage your co-operative anywhere anytime
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col items-center p-6 py-10 space-y-6 rounded-lg md:w-1/3"
+          >
+            <img
+              src="./images/Image3 on landing page.png"
+              alt=""
+              class="w-40"
+            />
+            <h1 class="text-2xl font-bold">Security</h1>
+            <p class="text-1xl text-center">Security At Its Best</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features">
+        <!-- Flex container -->
+        <div
+          class="flex flex-col mx-8 md:mx-10 lg:mx-40 justify-center mt-40 space-y-12 md:space-y-0 md:flex-row"
+        >
+          <!-- Whats Different -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col xl:items-end space-y-12 md:w-1/2"
+          >
+            <h2
+              class="md:max-w-md lg:max-w-md text-3xl font-bold text-center md:text-left"
+            >
+              What's different about Kubuce?
+            </h2>
+            <p class="md:max-w-sm lg:max-w-md text-center md:text-left">
+              Manage provides all the functionality your team needs, without the
+              complexity. Out software is tailore-made for modern digital
+              product teams.
+            </p>
+          </div>
+          <!-- Numbered List -->
+          <div class="flex flex-col space-y-8 md:w-1/2">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    01
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    Flexible System
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  Flexible System
+                </h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis ipsam repellendus a labore? Neque, beatae.
+                </p>
+              </div>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    02
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    Payment by in-built robot
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  Payment by in-built robot
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolores esse impedit animi natus sunt praesentium?
+                </p>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    03
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    E-wallet statement
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  E-wallet statement
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+                  fugit magni dolorem quod a natus.
+                </p>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    04
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    Thrift Savings
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  Thrift Savings
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+                  fugit magni dolorem quod a natus.
+                </p>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    05
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    Online loan application
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  Online loan application
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+                  fugit magni dolorem quod a natus.
+                </p>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row"
+            >
+              <!-- Heading -->
+              <div class="rounded-l-full bg-transparent">
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="px-4 py-2 text-white rounded-full md:py-1 bg-kubuceDarkBlue"
+                  >
+                    06
+                  </div>
+                  <h3 class="text-base font-bold md:md-4 md:hidden">
+                    Administrative platform
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <h3 class="hidden mb-4 text-lg font-bold md:block">
+                  Administrative platform
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+                  fugit magni dolorem quod a natus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials">
+        <!-- Container to heading and text blocks -->
+        <div class="lg:mx-20 px-5 mx-auto mt-32 text-center">
+          <!-- Heading -->
+          <h2 class="text-4xl font-bold mb-5 text-center text-kubuceDarkBlue">
+            What Our Clients Say
+          </h2>
+
+          <div class="splide mt-3">
+            <div class="splide__track">
+              <!-- Testimonials Container -->
+              <div class="mt-24 splide__list">
+                <!-- Testimonial 1 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                  class="flex flex-col items-center p-6 pt-12 pb-12 space-y-6 md:w-1/3 splide__slide"
+                >
+                  <div class="avater h-32 w-32">
+                    <img src="./images/person2.jpg" alt="" class="" />
+                  </div>
+                  <h5 class="text-lg font-bold">Anisha Li</h5>
+                  <p class="text-sm">
+                    "Manage has supercharged out team's workflow. The ability to
+                    maintain visibility on karger milstone at all times keeps
+                    everyone motivated"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cta -->
+      <section id="cta" class="bg-kubuceDarkBlue mt-20 py-20">
+        <div class="space-y-10 mx-5 text-center">
+          <!-- Heading -->
+          <h2 class="text-5xl font-bold muli-bold text-white">
+            More Than 5000 Users And Still Counting
+          </h2>
+          <p class="text-2xl text-white">
+            Try Kubuce now and appriciate its features & functionalities.
+          </p>
+          <!-- Button  -->
+          <div>
+            <a
+              href=""
+              class="px-10 py-3 text-kubuceDarkBlue transition-all text-lg bg-white rounded-md font-semibold inline hover:bg-kubuceInfoBlue hover:text-white"
+              >Join Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <footer class="fe-footer">
+        <a href="#" class="backtotop"><i class="fa-solid fa-arrow-up"></i></a>
+        <div class="child">
+          <div class="logo">
+            <img src="./images/kubuce logo dark.png" alt="" />
+          </div>
+          <span>
+            The Kubuce cooperative society management web application as you may
+            already know is a cooperative web application use to manage both
+            members, records and accounts of cooperative societies
+          </span>
+          <div class="social">
+            <a href="">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <div
+            class="download-btns text-center mx-10 flex gap-6"
+            id="getKubuce"
+          >
+            <div class="google-play">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/google-play.svg" alt=""
+              /></a>
+            </div>
+            <div class="app-store">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/app-store.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">Company</h3>
+          <div class="nav">
+            <a href="">About Us</a>
+            <a href="">FAQ</a>
+            <a href="">Pricing</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Resources
+          </h3>
+          <div class="nav">
+            <a href="">Privacy Policy</a>
+            <a href="">Referral Program</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Contact Us
+          </h3>
+          <div class="nav">
+            <span
+              >Shop 401, Iseken, Plaza Enerthen junction, Sapale Road, Effueun
+              Delta State</span
+            >
+            <span>
+              <span>+(234) 705-902-6964</span>
+              <span>+(234) 701-081-7588</span>
+            </span>
+            <span>contact@kubuce.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

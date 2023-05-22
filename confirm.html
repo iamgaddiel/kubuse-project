@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <!-- Simple NavBar -->
+      <nav class="fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex items-center flex-wrap py-5 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Space -->
+      <div class="h-24"></div>
+
+      <div class="flex w-full h-full justify-center items-center px-10 mt-20">
+        <form
+          action="
+        "
+          class="sm:w-1/3 space-y-4"
+        >
+          <h1 class="text-center font-bold text-kubuceDarkBlue text-4xl">
+            Confirm Your Action
+          </h1>
+          <p class="text-center font-bold">
+            Enter password to confirm your action
+          </p>
+          <div class="form-control">
+            <label
+              for=""
+              class="form-label inline-block muli-semi-bold mb-3 text-lg"
+              >Password</label
+            >
+
+            <div class="inner relative">
+              <input
+                type="password"
+                class="border-1px font-semibold transition-all py-4 px-5 pr-12 rounded-md w-full"
+                required
+                placeholder="*******"
+              />
+              <div
+                class="password_eye absolute top-1/3 right-4 text-right cursor-pointer"
+              >
+                <span><i class="fa-solid fa-eye-slash"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-control">
+            <button
+              type="submit"
+              class="rounded-md px-20 py-4 shadow-lg font-bold text-white bg-kubuceDanger whitespace-nowrap w-full focus:outline-none focus:ring focus:ring-red-400"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Simple Footer -->
+      <div class="py-3 px-5 mt-20 sticky top-full">
+        <div class="container mx-auto flex justify-center items-center">
+          <ul class="flex space-x-10 px-5 font-semibold text-sm">
+            <!-- Users Will Just download the pdf -->
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Privacy Policy</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">User Agreement</a>
+            </li>
+            <li class="list-disc hover:text-kubuceInfoBlue">
+              <a href="" download="">Terms And Condition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

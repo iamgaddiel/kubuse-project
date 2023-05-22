@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- Aos Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--======================= Font Awesome Links ========================-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Kubuce</title>
+  </head>
+  <body>
+    <div class="kubuce-container">
+      <div id="full-backdrop"></div>
+      <!-- NavBar -->
+      <nav class="shadow-lg fixed kubuce-header z-10">
+        <!-- FLex Container -->
+        <div class="flex justify-between items-center py-4 mx-5 lg:mx-20">
+          <!-- Logo -->
+          <div>
+            <a href="index.html" class="h-4">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-6 md:h-8"
+              />
+            </a>
+          </div>
+          <!-- Nav Items -->
+          <ul
+            class="hidden md:flex items-center font-semibold text-ellipsis space-x-12 md:mr-0 lg:mr-60"
+          >
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Features </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="#services"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#features"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Testimonials</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#getKubuce"
+                      class="px-8 py-2 transition-color hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li class="flex items-center cursor-pointer dropdown relative">
+              <span> Help </span>
+              <span class="mt-1 ml-3"
+                ><svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                  <path d="M4.5 6L0 0H9L4.5 6Z" fill="#40196D"></path></svg
+              ></span>
+              <div
+                class="dropdown-menu absolute top-20 text-white rounded-lg shadow-lg bg-kubuceDarkBlue"
+              >
+                <ul class="py-5 space-y-4">
+                  <li>
+                    <a
+                      href="./faqs.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./contact.html"
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue active"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./announcement.html"
+                      class="px-8 py-2 transition-colors hover:bg-kubuceInfoBlue"
+                      >Announcements</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="px-8 py-2 transition-colors whitespace-nowrap hover:bg-kubuceInfoBlue"
+                      >Get Kubuce</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- Authentication -->
+          <div class="nav-auth hidden md:flex space-x-10 items-center">
+            <a href="./login.html" class="font-bold hover:text-gray-600"
+              >Login</a
+            >
+            <a
+              href="./signUp.html"
+              class="rounded-full px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap hover:bg-kubuceDarkBlue transition-all"
+              >Sign Up</a
+            >
+          </div>
+          <!-- Hamburgur Icon-->
+          <button
+            id="open-menu-btn"
+            class="flex hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Kubuce Mobile view -->
+
+      <div
+        class="kubuce-mobile fixed z-50 bg-white text-black"
+        id="mobile-menu"
+      >
+        <!-- Mobile Header -->
+        <div class="md:px-20 mt-5 mb-20 mobile-header">
+          <!-- Hamburgur Icon-->
+          <div class="hamburger-wrap w-full flex justify-end">
+            <button
+              id="close-menu-btn"
+              class="flex hamburger md:hidden focus:outline-none open"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Logo -->
+          <div class="kubuce-mobile-logo flex justify-center items-center mt-5">
+            <a href="index.html">
+              <img
+                src="./images/kubuce logo dark.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="kubuce-mobile-nav mx-10">
+          <ul class="space-y-8 font-bold">
+            <li>
+              <a href="./about.html" class="hover:text-kubuceInfoBlue">About</a>
+            </li>
+            <li>
+              <a href="./pricing.html" class="hover:text-kubuceInfoBlue"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="./faqs.html" class="hover:text-kubuceInfoBlue">FAQs</a>
+            </li>
+            <li>
+              <a href="./contact.html" class="hover:text-kubuceInfoBlue active"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="./announcement.html" class="hover:text-kubuceInfoBlue"
+                >Announcements</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Authentication -->
+        <div
+          class="nav-auth flex space-x-5 justify-center items-center mx-5 mt-20"
+        >
+          <a
+            href="./login.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Login</a
+          >
+          <a
+            href="./signUp.html"
+            class="rounded-md px-10 py-3 shadow-lg font-bold text-white bg-kubuceInfoBlue whitespace-nowrap transition-all"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+      <!-- Space -->
+      <div class="h-24"></div>
+      <!-- Hero -->
+      <section id="hero">
+        <div
+          class="flex flex-col-reverse md:flex-row items-center px-6 space-y-0 md:space-y-0 mx-5 md:mx-10 lg:mx-20"
+        >
+          <!-- Left item -->
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="flex flex-col items-center md:items-start mt-10 space-y-12 md:w-1/2"
+          >
+            <h1
+              class="max-w-md text-4xl md:text-6xl lg:text-7xl font-extrabold text-center md:text-left text-kubuceDarkBlue"
+            >
+              We love to hear from you
+            </h1>
+            <p class="max-w-md text-center md:text-left">
+              Can't get your way around or need help for your cooperative
+              success? Get in touch.
+            </p>
+            <div class="download-btns md:hidden text-center flex gap-6">
+              <div class="google-play">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/google-play.svg" alt=""
+                /></a>
+              </div>
+              <div class="app-store">
+                <a href="" class="px-6 pt-2 baseline">
+                  <img src="./images/app-store.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <!-- Image right Item-->
+          <div
+            class="md:w-1/2 hero-right"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <img src="./images/Contact us.png" alt="" class="w-30" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex flex-col justify-center items-center text-center space-y-8 py-7 px-4 mx-5 md:mx-10 lg:mx-20 mt-20 bg-kubuceDarkBlue"
+        >
+          <h1 class="text-5xl font-extrabold text-white">
+            The cooperative app for Everyone
+          </h1>
+          <p class="text-white">
+            Flexible system, In-built robot, E-wallet statement, Thrift savings,
+            Loan application and Administrative platform
+          </p>
+
+          <a
+            href="#getKubuce"
+            class="p-3 px-8 pt-2 text-kubuceDarkBlue font-extrabold bg-white rounded-lg baseline hover:-translate-y-2 transition-transform"
+            >Get Kubuce</a
+          >
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section id="contact-form">
+        <div
+          class="flex flex-col md:flex-row justify-between gap-6 items-center mx-5 md:mx-10 lg:mx-20 mt-20 mb-20"
+        >
+          <div
+            class="md:w-1/2 text-center flex flex-col justify-center items-center space-y-12"
+          >
+            <div>
+              <h1
+                class="text-5xl muli-bold font-extrabold text-center text-kubuceDarkBlue max-w-md"
+              >
+                Have You Checked Our Faqs?
+              </h1>
+            </div>
+            <div>
+              <a
+                href="./faqs.html"
+                class="rounded-md px-20 py-4 shadow-lg font-bold text-white transition-all bg-kubuceDarkBlue whitespace-nowrap hover:bg-kubuceInfoBlue"
+              >
+                FAQS
+              </a>
+            </div>
+          </div>
+          <form action="" class="md:w-1/2 mt-14 md:mt-0 space-y-5">
+            <h2 class="text-4xl font-bold mb-5 text-center text-kubuceDarkBlue">
+              Get In Touch
+            </h2>
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+              <div class="md:w-1/2">
+                <div class="form-control">
+                  <input
+                    type="text"
+                    class="border-1px font-semibold transition-all py-3 px-5 rounded-md text-1xl w-full"
+                    placeholder="Full Name"
+                  />
+                </div>
+              </div>
+              <div class="md:w-1/2">
+                <div class="form-control">
+                  <input
+                    type="email"
+                    class="border-1px font-semibold transition-all py-3 px-5 rounded-md text-1xl w-full"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h1 class="font-bold text-2xl mb-2">
+                Your question/message for us
+              </h1>
+              <div class="form-control">
+                <textarea
+                  placeholder="Your Message"
+                  class="border-1px font-semibold transition-all py-3 px-5 rounded-lg w-full h-64"
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-control">
+              <button
+                type="submit"
+                class="rounded-md px-20 py-4 shadow-lg font-bold text-white w-full bg-kubuceDanger whitespace-nowrap"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="fe-footer">
+        <a href="#" class="backtotop"><i class="fa-solid fa-arrow-up"></i></a>
+        <div class="child">
+          <div class="logo">
+            <img src="./images/kubuce logo dark.png" alt="" />
+          </div>
+          <span>
+            The Kubuce cooperative society management web application as you may
+            already know is a cooperative web application use to manage both
+            members, records and accounts of cooperative societies
+          </span>
+          <div class="social">
+            <a href="">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <div
+            class="download-btns text-center mx-10 flex gap-6"
+            id="getKubuce"
+          >
+            <div class="google-play">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/google-play.svg" alt=""
+              /></a>
+            </div>
+            <div class="app-store">
+              <a href="" class="p-3 px-6 pt-2 baseline">
+                <img src="./images/app-store.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">Company</h3>
+          <div class="nav">
+            <a href="./about.html">About Us</a>
+            <a href="./faqs.html">FAQ</a>
+            <a href="./pricing.html">Pricing</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Resources
+          </h3>
+          <div class="nav">
+            <a href="">Privacy Policy</a>
+            <a href="">Referral Program</a>
+          </div>
+        </div>
+        <div class="child">
+          <h3 class="font-extrabold underline text-kubuceDarkBlue">
+            Contact Us
+          </h3>
+          <div class="nav">
+            <span
+              >Shop 401, Iseken, Plaza Enerthen junction, Sapale Road, Effueun
+              Delta State</span
+            >
+            <span>
+              <span>+(234) 705-902-6964</span>
+              <span>+(234) 701-081-7588</span>
+            </span>
+            <span>contact@kubuce.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
